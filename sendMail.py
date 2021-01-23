@@ -1,40 +1,34 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-##############################################
-##                                          ##
-## Script para enviar un correo electrónico ##
-##             www.manusoft.es              ##
-##                                          ##
-##############################################
-
 
 
 # Importamos la librería necesaria para el envío de correos
+from email.mime.multipart import MIMEMultipart
+from email.MIMEImage import MIMEImage
+from email.mime.text import MIMEText
 import smtplib
 
-def sendMail(src, pwd, dst, sub, msg):
+
+def sendMail(src, pwd, dst, sub, mensage):
 	# << Montaje del correo electrónico
-	email = """From: %s
-To: %s
-MIME-Version: 1.0
-Content-type: text/html
-Subject: %s
-%s
-""" %(src, dst, sub, msg)
+	msg = MIMEMultipart()
+	msg['From'] =src
+	msg['To'] = dst
+	msg['Subject'] = sub
+	msg.attach(MIMEText(mensage, 'plain'))
 	# >> Fin del montaje del correo electrónico
-	
 	# << Envío del correo
 	# Apertura del servido SMTP en el servidor de correo electrónico de origen
 	try:
 		server = smtplib.SMTP('smtp.gmail.com:587')
-                server.starttls()
+		server.starttls()
 		try:
 			# Inicio de sesión en el servidor de correo electrónico de origen.
-			server.login(src, pwd)
+			server.login(msg['From'], pwd)
 			try:
 				# Envío del correo electrónico
-				server.sendmail(src, dst, email)
+				server.sendmail(msg['From'], msg['To'], msg.as_string())
 			except:
 				print('Error al enviar el correo electrónico')
 		except:
@@ -47,6 +41,5 @@ Subject: %s
 
 
 
-######################
-##  FIN DEL SCRIPT  ##
-######################
+# Fin del Script
+

@@ -32,29 +32,30 @@ def checkActualIP():
 	# << Lectura de la última dirección IP pública registrada en el fichero
 	# Se leen todas las líneas del fichero, quedándonos únicamente con la última
 	linea = archivo.readline()
-	publicIP = ""
+	publicIParchivada = ""
 	while linea != '':
-		publicIP = linea
+		publicIParchivada = linea
 		linea = archivo.readline()
 	# >> Cierre del fichero con la última dirección IP pública registrada
-	archivo.close()
+	#archivo.close()
 
 	# Si en el archivo no existe ninguna dirección IP pública registrada, o la última registrada es diferente a la actual
-	if publicIP == "" or publicIP != publicIpActual:
-		# Guardamos la dirección IP pública actual en la variable "publicIP"
-		publicIP = publicIpActual
+#	if publicIP == "" or publicIP != publicIpActual:
+#		# Guardamos la dirección IP pública actual en la variable "publicIP"
+#		publicIP = publicIpActual
 		# Escribimos la dirección IP pública actual en el fichero "publicIPs.txt". El atributo 'w' abre el fichero únicamente en modo escritura y, si no existe, lo crea.
-		archivo = open("publicIPs.txt", 'w')
-		archivo.write(publicIP)
-		# Cerramos el fichero
-		archivo.close()
-		# Devolvemos 'False' para indicar que las direcciones no coincidían
-		return False
-	else:
-		# Devolvemos 'True' para indicar que las direcciones coincidían
-		return True
+#		archivo = open("publicIPs.txt", 'w+')
+#		archivo.write(publicIP)
+#		# Cerramos el fichero
+#		archivo.close()
+##		# Devolvemos 'False' para indicar que las direcciones no coincidían
+#		return False
+#	else:
+#		# Devolvemos 'True' para indicar que las direcciones coincidían
+#		return True
 
-
+	archivo.close()
+	return publicIParchivada, publicIpActual
 ####################
 ## FIN DEL SCRIPT ##
 ####################
