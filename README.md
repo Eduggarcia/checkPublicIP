@@ -9,6 +9,7 @@ La utilidad de este pequeño programa es para el caso en el que tengamos los pue
 Este conjunto de scripts/módulos en python nos permiten comprobar cuál es la dirección IP pública de nuestro router, compararla con la obtenida en la última comprobación y, si ha cambiado, recibir un correo electrónico con la nueva dirección IP.
 
 Si añadimos esta linea a CRON, se ejecturará el Script cada hora (crontab -e)
+
 */360 * * * * sudo python /home/pi/scripts/checkPublicIP/checkPublicIP.py mail@origen pass mail@destino
 
 Podéis ver un tutorial sobre cómo hacerlo con un código similar al de este repositorio en: http://www.manusoft.es/comprobar-automaticamente-la-direccion-ip-publica-de-nuestra-raspberry-pi/
