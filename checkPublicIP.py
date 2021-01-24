@@ -24,7 +24,7 @@ def checkPublicIP(src, pwd, dst):
 		# Cerramos el fichero
 		archivo.close()
 		sub="Ha cambiado la IP Publica de casa"
-		msg ="La nueva IP Public de casa es:  " + publicIP + " a las:  " + str(now)
+		msg ="La nueva IP Public de casa es:  " + publicActualIP + " a las:  " + str(now)
 		# Si la IP actual no coincide con la registrada, enviamos la nueva IP por correo el$
 		#sendMail(src, pwd, dst, sub, msg)
 	else:
