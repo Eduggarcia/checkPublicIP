@@ -24,7 +24,7 @@ def checkPublicIP(src, pwd, dst):
 		# Cerramos el fichero
 		archivo.close()
 		sub="Ha cambiado la IP Publica de casa"
-		msg ="La nueva IP Public de casa es:  " + publicIP + " a las:  " + str(now)
+		msg ="La nueva IP Public de casa es:  " + publicActualIP + " a las:  " + str(now)
 		# Si la IP actual no coincide con la registrada, enviamos la nueva IP por correo el$
 		#sendMail(src, pwd, dst, sub, msg)
 	else:
@@ -33,21 +33,6 @@ def checkPublicIP(src, pwd, dst):
                 # Si la Ip es la misma que tenia guardada, no hay problema
                 #sendMail(src, pwd, dst, sub, msg)
 	sendMail(src, pwd, dst, sub, msg)
- 
-
-#	if (not checkActualIP()):#
-#		sub="Ha cambiado la IP Publica de casa"
-#		msg ="La nueva IP Public de casa es:  " + getPublicIP() + " a las:  " + str(now)
-#		# Si la IP actual no coincide con la registrada, enviamos la nueva IP por correo electrónico
-#		#sendMail(src, pwd, dst, sub, msg)
-#	else:
-#		sub="Estado de la Ip Publica de Casa"
-#		msg ="La Ip de Casa sigue siendo la misma a las " + str(now)
-#                # Si la Ip es la misma que tenia guardada, no hay problema
-#              #sendMail(src, pwd, dst, sub, msg)
-#	sendMail(src, pwd, dst, sub, msg)
-
-
 # >> Fin de la definición
 
 # << Inicio de la invocación
