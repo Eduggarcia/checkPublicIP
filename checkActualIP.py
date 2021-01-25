@@ -1,13 +1,13 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 ################################################
 ##                                            ##
 ## Script para comprobar la IP pública actual ##
 ## con la IP pública almacenada de un fichero ##
-##                                            ##
-##               www.manusoft.es              ##
-##                                            ##
+## y llamar a getpublicip para ver la IP      ##
+## public actual                              ##
+## original Manusoft.com                      ##
 ################################################
 
 
