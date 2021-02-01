@@ -26,7 +26,7 @@ def checkPublicIP(src, pwd, dst):
 		sub="Ha cambiado la IP Publica de casa"
 		msg ="La nueva IP Public de casa es:  " + publicActualIP + " a las:  " + str(now)
 		# Si la IP actual no coincide con la registrada, enviamos la nueva IP por correo el$
-		sendMail(src, pwd, dst, sub, msg
+		sendMail(src, pwd, dst, sub, msg)
 
 #Esta parte se oculta por que ahora se ejecuta el script cada 10 minutos y no veo necesario recibir un mail cada 10 minutos,
 #ya se ha comprobado que funciona, mas adelante veremos si esta parte del codigo desaparece por completo
